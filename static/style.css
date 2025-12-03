@@ -1,0 +1,8 @@
+body {
+  background-color: #f4f6f8;
+}
+
+img {
+  max-height: 350px;
+  object-fit: contain;
+}

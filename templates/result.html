@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}
+분석 결과
+{% endblock %}
+
+{% block content %}
+<h3>🔍 분석 결과</h3>
+
+{% if detections|length == 0 %}
+<div style="padding: 15px; margin-bottom: 20px; background-color: #ffecec; border: 1px solid #ff9d9d; border-radius: 8px; color: #d60000; text-align:center;">
+    🍽 <strong>인식된 음식이 없습니다.</strong><br>
+    사진이 너무 가까우거나, 음식이 아닌 것으로 판단될 수 있어요.<br>
+    다른 이미지로 다시 시도해 주세요!
+</div>
+{% endif %}
+
+<div class="row">
+    <div class="col-md-6">
+        <h5>원본</h5>
+        <img src="{{ original_image_url }}" class="img-fluid rounded">
+    </div>
+    <div class="col-md-6">
+        <h5>결과</h5>
+        <img src="{{ result_image_url }}" class="img-fluid rounded">
+    </div>
+</div>
+
+<h4 class="mt-4">감지된 음식</h4>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>음식</th>
+            <th>신뢰도</th>
+            <th>칼로리(kcal)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for d in detections %}
+        <tr>
+            <td>{{ d.label }}</td>
+            <td>{{ (d.confidence * 100) | round(1) }}%</td>
+            <td>{{ d.calories }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<p><strong>총 칼로리:</strong> {{ total_calories }} kcal</p>
+
+<a href="/" class="btn btn-secondary mt-3">돌아가기</a>
+{% endblock %}
