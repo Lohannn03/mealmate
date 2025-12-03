@@ -132,7 +132,7 @@ CALORIE_TABLE = {
 
 ## 👨‍💻 개발자
 
-**TRAN HOANG LOC (전황록)**  
+**TRAN HOANG LOC (쩐호앙록)**  
 SeoulTech – Computer Science  
 Open Source Software Term Project
 
