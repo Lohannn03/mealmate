@@ -87,7 +87,8 @@ mealmate/
 │-- requirements.txt
 │-- LICENSE
 │-- README.md
-│
+│-- 실행 화면 스크린샷
+|
 ├── static/
 │   ├── uploads/    # 업로드된 원본 이미지
 │   ├── results/    # YOLO 분석 결과 이미지
