@@ -85,6 +85,7 @@ http://127.0.0.1:8000
 mealmate/
 │-- app.py
 │-- requirements.txt
+|-- 실행 화면 스크린샷
 │-- LICENSE
 │-- README.md
 │
